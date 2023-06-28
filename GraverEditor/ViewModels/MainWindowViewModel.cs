@@ -1,10 +1,9 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using System;
+﻿using Prism.Commands;
+using Prism.Mvvm;
 
-namespace GraverEditor.ViewModel
+namespace GraverEditor.ViewModels
 {
-    public class MainWindowViewModel : ObservableObject
+    class MainWindowViewModel : BindableBase
     {
         private static readonly NLog.Logger log = NLog.LogManager.GetCurrentClassLogger();
 
@@ -15,32 +14,34 @@ namespace GraverEditor.ViewModel
 
         private void InitCommand()
         {
-            SayHelloCmd = new RelayCommand<string>((arg) => SayHello(arg));
+            SayHelloCmd = new DelegateCommand<string>((arg) => SayHello(arg)); 
         }
 
+
+
         #region 属性
-        
+
         private string msg;
 
         public string Msg
         {
             get { return msg; }
-            set => SetProperty(ref msg, value);
+            set { msg = value; RaisePropertyChanged(); }
         }
 
         #endregion
 
         #region 命令
 
-        public RelayCommand<string> SayHelloCmd{get;set;}
+        public DelegateCommand<string> SayHelloCmd { get; set; }
+
         private void SayHello(string arg)
         {
-            Msg = "hello " + arg;
-            log.Info($"arg{arg}");
+            Msg = "Hello " + arg;
+            log.Info($"msg:${arg}");
+
         }
 
         #endregion
-
     }
-
 }
