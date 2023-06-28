@@ -3,12 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraverEditor", "GraverEditor\GraverEditor.csproj", "{2FBABA28-42AE-4444-80AA-F54F6AFE0D41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraverEditor", "GraverEditor\GraverEditor.csproj", "{2FBABA28-42AE-4444-80AA-F54F6AFE0D41}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{4172C09E-F7FA-4D35-A27C-D693E767CFD6}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{442666EA-F9EF-4342-82CA-503FB3D18B65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2FBABA28-42AE-4444-80AA-F54F6AFE0D41} = {442666EA-F9EF-4342-82CA-503FB3D18B65}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A4755E99-10DE-4621-853A-6541117C8B38}
